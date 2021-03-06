@@ -104,6 +104,9 @@ console.log(1 === "1"); //==>false 型が違う
 
 // 等価演算子(==)はバグが多いからあまり使わない。
 
+
+// 2021.0306
+
 /*
   暗黙的な型変換という概念:明示的はない型変換
 */
@@ -113,4 +116,16 @@ console.log(1 === "1"); //==>false 型が違う
 console.log(1 == "1"); // ==>true
 console.log(0 == false); // ==>true
 console.log(10 == ["10"]); // ==>true
+
+/*
+  コンストラクタ関数(String):文字列へと明示的に変換できる
+  ＊プリミティブ型に限る！
+*/
+String("str"); // ==>"str"
+
+/* 
+  NaN :Not a Number だが、、、
+  衝撃！！NaNはnumber型
+*/ 
+console.log(typeof NaN); // => "number"
 
