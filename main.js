@@ -129,3 +129,55 @@ String("str"); // ==>"str"
 */ 
 console.log(typeof NaN); // => "number"
 
+
+// 2021 / 3 / 8
+
+/*
+  関数宣言は
+  function(仮引数1,仮引数2) {
+  関数が呼び出された時の処理
+  return 返り値;
+  }
+*/
+/*
+  関数の呼び出し
+  const 関数の結果 = 関数名(引数1,引数2);
+  console.log(関数の結果);
+*/
+
+function double(num) {
+  return num * 2; // numの2倍の値を返す
+}
+console.log(double(20)); //==>40
+
+
+// 関数が何も値を返す必要がない場合は、return文そのものを省略できる
+function fn() {
+  return;
+}
+console.log(fn()); //undifinde
+
+// 呼び出し次の引数が少ない場合==>undifinedが代入される
+function echo(x) {
+  return x;
+}
+console.log(echo(1));// ==>1
+console.log(echo());// ==>undifined
+
+function argumentsToArray(x, y) {
+  return [x, y];
+}
+console.log(argumentsToArray(2, 3)); //==>[2,3]
+console.log(argumentsToArray(2)); //==>[2,undifined]
+
+// デフォルト引数
+//引数が渡されなかった場合のみデフォルト値が入る
+function addPrefix(text, prefix = "デフォルト:") {
+  return prefix + text;
+}
+// falsyな値を渡してもデフォルト値は代入されない
+console.log(addPrefix("わろた"));//==> デフォルト:わろた
+console.log(addPrefix("わろた", "")); //==>わろた
+console.log(addPrefix("わろた", "くそ"));//==>くそわろた
+
+// 呼び出し時の引数が多いとき
