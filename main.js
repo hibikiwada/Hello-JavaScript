@@ -180,4 +180,40 @@ console.log(addPrefix("わろた"));//==> デフォルト:わろた
 console.log(addPrefix("わろた", "")); //==>わろた
 console.log(addPrefix("わろた", "くそ"));//==>くそわろた
 
-// 呼び出し時の引数が多いとき
+// 呼び出し時の引数が多いとき==>無視される
+function add(x,y) {
+  return x + y;
+}
+console.log(add(1, 2));//==>3
+console.log(add(1,2,3));//==>3
+
+// 
+function userPrintId(user) {
+  console.log(user.id);
+}
+const user = {
+  id: 43
+}
+userPrintId(user);
+
+// factorialは関数の外から呼び出せる名前
+// innerFactは関数の外から呼び出せない名前
+const factorial = function innerFact(n) {
+  if (n === 0) {
+    return 1;
+  }
+  return n * innerFact(n - 1);
+}
+console.log(factorial(3)); //==>6
+
+
+
+
+// 式 
+// わからん！！-->わかってきた
+const fnc = () => {
+    return 1;
+};
+// fn() という式の評価値を表示
+console.log(fnc()); // => 1
+
